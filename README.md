@@ -5,9 +5,16 @@
 
 AssetStudio is a tool for exploring, extracting and exporting assets and assetbundles.
 
+## What This Fork Offers Over the Original Repository
+* Support for New Unity Versions
+  * Added support for Unity 2022.2 and 2022.3.
+* Enhanced Shader Preview and Export
+  * Add pretty printing functionality to enhance shader information readability.
+  * Fix errors by implementing lazy generation for ShaderSubProgram as needed.
+
 ## Features
 * Support version:
-  * 3.4 - 2022.1
+  * 3.4 - 2022.3
 * Support asset types:
   * **Texture2D** : convert to png, tga, jpeg, bmp
   * **Sprite** : crop Texture2D to png, tga, jpeg, bmp
