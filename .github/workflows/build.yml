@@ -7,6 +7,15 @@ on:
     branches: [ master ]
 
   workflow_dispatch:
+    inputs:
+      createRelease:
+        description: 'Create a new GitHub Release?'
+        required: true
+        default: 'false'
+      releaseTitle:
+        description: 'version name'
+        required: true
+        default: 'v0.16.48'
 
 jobs:
   build:
@@ -55,3 +64,64 @@ jobs:
         with:
           name: AssetStudio.net6
           path: AssetStudioGUI/bin/Release/net6.0-windows/publish
+
+      - name: Create Release
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKENFORCI }}
+        with:
+          tag_name: ${{ github.event.inputs.releaseTitle }}
+          release_name: Release ${{ github.event.inputs.releaseTitle }}
+          body: Description of the release.
+          draft: false
+          prerelease: false
+
+      - name: Create Zip (.Net472)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        run: Compress-Archive -Path ./AssetStudioGUI/bin/Release/net472/* -DestinationPath ./AssetStudioGUI/bin/Release/net472/AssetStudio.net472.zip
+        shell: powershell
+
+      - name: Upload Release Asset (.Net472)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKENFORCI }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./AssetStudioGUI/bin/Release/net472/AssetStudio.net472.zip
+          asset_name: AssetStudio.net472.zip
+          asset_content_type: application/zip
+
+      - name: Create Zip (.Net5)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        run: Compress-Archive -Path ./AssetStudioGUI/bin/Release/net5.0-windows/publish/* -DestinationPath ./AssetStudioGUI/bin/Release/net5.0-windows/publish/AssetStudio.net5.zip
+        shell: powershell
+
+      - name: Upload Release Asset (.Net5)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKENFORCI }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./AssetStudioGUI/bin/Release/net5.0-windows/publish/AssetStudio.net5.zip
+          asset_name: AssetStudio.net5.zip
+          asset_content_type: application/zip
+
+      - name: Create Zip (.Net6)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        run: Compress-Archive -Path ./AssetStudioGUI/bin/Release/net6.0-windows/publish/* -DestinationPath ./AssetStudioGUI/bin/Release/net6.0-windows/publish/AssetStudio.net6.zip
+        shell: powershell
+
+      - name: Upload Release Asset (.Net6)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.createRelease == 'true'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKENFORCI }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./AssetStudioGUI/bin/Release/net6.0-windows/publish/AssetStudio.net6.zip
+          asset_name: AssetStudio.net6.zip
+          asset_content_type: application/zip
