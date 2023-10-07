@@ -953,7 +953,6 @@ namespace AssetStudio
                 if (entry.Segment == segment)
                 {
                     m_SubProgramWraps[i] = new ShaderSubProgramWrap(reader, entry);
-                    Console.WriteLine(i);
                 }
             }
         }
