@@ -1,9 +1,24 @@
 # AssetStudio
-[![Build status](https://ci.appveyor.com/api/projects/status/rnu7l90422pdewx4?svg=true)](https://ci.appveyor.com/project/Perfare/assetstudio/branch/master/artifacts)
 
-**None of the repo, the tool, nor the repo owner is affiliated with, or sponsored or authorized by, Unity Technologies or its affiliates.**
+![Last Commit](https://img.shields.io/github/last-commit/zhangjiequan/AssetStudio?style=flat-square)
+![Open Issues](https://img.shields.io/github/issues-raw/zhangjiequan/AssetStudio?style=flat-square)
+![Contributors](https://img.shields.io/github/contributors/zhangjiequan/AssetStudio?style=flat-square)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)
 
-AssetStudio is a tool for exploring, extracting and exporting assets and assetbundles.
+![Platform](https://img.shields.io/badge/platform-windows-lightgrey?style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/zhangjiequan/AssetStudio/total?style=flat-square)
+![License](https://img.shields.io/github/license/zhangjiequan/AssetStudio?style=flat-square)
+
+![GitHub watchers](https://img.shields.io/github/watchers/zhangjiequan/AssetStudio?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/zhangjiequan/AssetStudio?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/zhangjiequan/AssetStudio?style=flat-square)
+
+[![Github CI Status](https://github.com/zhangjiequan/AssetStudio/actions/workflows/build.yml/badge.svg)](https://github.com/zhangjiequan/AssetStudio/actions)
+
+![Custom](https://img.shields.io/badge/zhangjiequan-Jackie@Baioo-green)
+
+
+AssetStudio - Based on the archived Perfare's AssetStudio, I continue Perfare's work to keep AssetStudio up-to-date, with support for new Unity versions and additional improvements.
 
 ## What This Fork Offers Over the Original Repository
 * Support for New Unity Versions
@@ -11,6 +26,11 @@ AssetStudio is a tool for exploring, extracting and exporting assets and assetbu
 * Enhanced Shader Preview and Export
   * Add pretty printing functionality to enhance shader information readability.
   * Fix errors by implementing lazy generation for ShaderSubProgram as needed.
+---
+
+**None of the repo, the tool, nor the repo owner is affiliated with, or sponsored or authorized by, Unity Technologies or its affiliates.**
+
+AssetStudio is a tool for exploring, extracting and exporting assets and assetbundles.
 
 ## Features
 * Support version:
