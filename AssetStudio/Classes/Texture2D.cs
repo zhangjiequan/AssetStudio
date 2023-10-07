@@ -92,6 +92,18 @@ namespace AssetStudio
             if (version[0] > 2019 || (version[0] == 2019 && version[1] >= 3)) //2019.3 and up
             {
                 var m_IgnoreMasterTextureLimit = reader.ReadBoolean();
+                //m_IgnoreMasterTextureLimit
+                //m_IgnoreMipmapLimit
+            }
+            if (
+                (reader.serializedType.m_Type?.ContainsNamePath("Base.m_MipmapLimitGroupName.Array.data") == true)//Auto-detect based on TypeTree
+                ||
+                (version[0] == 2022 && version[1] >= 2) //2022.2.0 and up
+                ||
+                (version[0] >= 2023) //2023 and up
+            )
+            {
+                var m_MipmapLimitGroupName = reader.ReadAlignedString();
             }
             if (version[0] >= 3) //3.0.0 - 5.4
             {
