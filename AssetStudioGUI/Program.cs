@@ -12,14 +12,14 @@ namespace AssetStudioGUI
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
 #if !NETFRAMEWORK
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
 #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AssetStudioGUIForm());
+            Application.Run(new AssetStudioGUIForm(args));
         }
     }
 }

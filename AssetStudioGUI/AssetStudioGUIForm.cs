@@ -93,8 +93,13 @@ namespace AssetStudioGUI
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
 
-        public AssetStudioGUIForm()
+        public AssetStudioGUIForm(string[] args)
         {
+            Console.WriteLine("AssetStudioGUIForm args.Length" + args.Length);
+            foreach (var arg in args)
+            {
+                Console.WriteLine("arg:" + arg);
+            }
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             InitializeComponent();
             Text = $"AssetStudioGUI v{Application.ProductVersion}";
@@ -109,6 +114,27 @@ namespace AssetStudioGUI
             Logger.Default = logger;
             Progress.Default = new Progress<int>(SetProgressBarValue);
             Studio.StatusStripUpdate = StatusStripUpdate;
+            HandleMainArgs(args);
+        }
+
+        private async void HandleMainArgs(string[] args)
+        {
+            //AssetStudioGUIForm_DragDrop
+            var paths = args;
+            if (paths.Length > 0)
+            {
+                ResetForm();
+                assetsManager.SpecifyUnityVersion = specifyUnityVersion.Text;
+                if (paths.Length == 1 && Directory.Exists(paths[0]))
+                {
+                    await Task.Run(() => assetsManager.LoadFolder(paths[0]));
+                }
+                else
+                {
+                    await Task.Run(() => assetsManager.LoadFiles(paths));
+                }
+                BuildAssetStructures();
+            }
         }
 
         private void AssetStudioGUIForm_DragEnter(object sender, DragEventArgs e)
