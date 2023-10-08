@@ -1,3 +1,6 @@
+- [README 中文](./README_zh.md)
+- [README English](./README.md)
+
 # AssetStudio
 
 ![Last Commit](https://img.shields.io/github/last-commit/zhangjiequan/AssetStudio?style=flat-square)
@@ -105,3 +108,7 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 * [Ishotihadus/mikunyan](https://github.com/Ishotihadus/mikunyan)
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
+
+## license
+
+AssetStudio is licensed under the [MIT](./LICENSE) license.
