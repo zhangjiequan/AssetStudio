@@ -25,7 +25,7 @@ AssetStudio - Based on the archived Perfare's AssetStudio, I continue Perfare's 
 
 ## What This Fork Offers Over the Original Repository
 * Support for New Unity Versions
-  * Added support for Unity 2022.2 and 2022.3.
+  * Added support for Unity 2021.3.10+, 2022.2, and 2022.3.
 * Enhanced Shader Preview and Export
   * Add pretty printing functionality to enhance shader information readability.
   * Fix errors by implementing lazy generation for ShaderSubProgram as needed.
