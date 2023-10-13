@@ -25,7 +25,7 @@ AssetStudio - 基于已归档的 Perfare 的 AssetStudio，我继续 Perfare 的
 
 ## 与原仓库相比，本Fork额外提供的
 * 支持新版本的 Unity
-  * 添加了对 Unity 2022.2 和 2022.3 的支持。
+  * 添加了对 Unity 2022.1.10+、2022.2 和 2022.3 的支持。
 * 增强的着色器预览和导出
   * 添加美观打印功能以增强着色器信息的可读性。
   * 通过实现 ShaderSubProgram 的延迟生成来修复错误。
