@@ -109,6 +109,10 @@ Use **File-Extract file** or **File-Extract folder**。
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
-## license
+## 许可
 
 AssetStudio 根据 [MIT](./LICENSE) 许可证授权。
+
+## 致谢
+
+如果你觉得此工具有用，请在你的致谢界面提及我的名字。像 "AssetStudio 由 Perfare & zhangjiequan 制作" 或 "感谢 Perfare & zhangjiequan" ，将不胜感激。
