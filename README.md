@@ -112,3 +112,6 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 ## license
 
 AssetStudio is licensed under the [MIT](./LICENSE) license.
+
+## Credits
+If you find this tool useful, please mention my name in your credits screen. Something like "AssetStudio by Perfare & zhangjiequan" or "Thanks to Perfare & zhangjiequan" would be very much appreciated.
