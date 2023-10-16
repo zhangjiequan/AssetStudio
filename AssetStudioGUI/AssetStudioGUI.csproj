@@ -5,9 +5,9 @@
 		<TargetFrameworks>net472;net5.0-windows;net6.0-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon>Resources\as.ico</ApplicationIcon>
-		<Version>0.16.48.0</Version>
-		<AssemblyVersion>0.16.48.0</AssemblyVersion>
-		<FileVersion>0.16.48.0</FileVersion>
+		<Version>0.16.49.0</Version>
+		<AssemblyVersion>0.16.49.0</AssemblyVersion>
+		<FileVersion>0.16.49.0</FileVersion>
 		<Copyright>Copyright © zhangjiequan 2018-2023</Copyright>
 		<DebugType>embedded</DebugType>
 	</PropertyGroup>
