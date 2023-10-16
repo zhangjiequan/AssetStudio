@@ -109,7 +109,7 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
-## license
+## License
 
 AssetStudio is licensed under the [MIT](./LICENSE) license.
 
