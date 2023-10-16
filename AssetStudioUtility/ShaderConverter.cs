@@ -768,6 +768,9 @@ namespace AssetStudio
                 case SerializedPropertyType.Range:
                     sb.Append(m_Prop.m_DefValue[0]);
                     break;
+                case SerializedPropertyType.Int:
+                    sb.Append((int)Math.Round(m_Prop.m_DefValue[0]));
+                    break;
                 case SerializedPropertyType.Texture:
                     sb.Append($"\"{m_Prop.m_DefTexture.m_DefaultName}\" {{ }}");
                     break;
