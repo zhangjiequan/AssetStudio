@@ -116,3 +116,11 @@ AssetStudio 根据 [MIT](./LICENSE) 许可证授权。
 ## 致谢
 
 如果你觉得此工具有用，请在你的致谢界面提及我的名字。像 "AssetStudio 由 Perfare & zhangjiequan 制作" 或 "感谢 Perfare & zhangjiequan" ，将不胜感激。
+
+## 合作
+
+随意Fork本项目并进行自定义修改，可以为自己使用，也可以通过创建pull requests来共享你的修改。如果你想帮助改进此工具，请通过提交issues来提供功能请求或错误报告，谢谢！
+
+## 联系
+
+通过电子邮件联系我：zhangjiequan@qq.com
