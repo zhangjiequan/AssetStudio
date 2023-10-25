@@ -115,3 +115,9 @@ AssetStudio is licensed under the [MIT](./LICENSE) license.
 
 ## Credits
 If you find this tool useful, please mention my name in your credits screen. Something like "AssetStudio by Perfare & zhangjiequan" or "Thanks to Perfare & zhangjiequan" would be very much appreciated.
+
+## Collaborate
+Feel free to fork the project and make modifications for yourself or to share by creating pull requests. Also, create issues for feature requests or bug reports if you want to help improving this tool, thanks!
+
+## Contact
+Contact me at zhangjiequan@qq.com
