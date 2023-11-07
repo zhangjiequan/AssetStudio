@@ -121,3 +121,7 @@ Feel free to fork the project and make modifications for yourself or to share by
 
 ## Contact
 Contact me at zhangjiequan@qq.com
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=zhangjiequan/AssetStudio&type=Date)](https://star-history.com/#zhangjiequan/AssetStudio&Date)
+
