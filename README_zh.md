@@ -124,3 +124,6 @@ AssetStudio 根据 [MIT](./LICENSE) 许可证授权。
 ## 联系
 
 通过电子邮件联系我：zhangjiequan@qq.com
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=zhangjiequan/AssetStudio&type=Date)](https://star-history.com/#zhangjiequan/AssetStudio&Date)
