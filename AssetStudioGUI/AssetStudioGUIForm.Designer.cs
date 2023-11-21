@@ -76,6 +76,9 @@
             this.debugMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportClassStructuresMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutAssetStudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donateAssetStudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -155,7 +158,8 @@
             this.modelToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.filterTypeToolStripMenuItem,
-            this.debugMenuItem});
+            this.debugMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 25);
@@ -523,6 +527,29 @@
             this.exportClassStructuresMenuItem.Size = new System.Drawing.Size(207, 22);
             this.exportClassStructuresMenuItem.Text = "Export class structures";
             this.exportClassStructuresMenuItem.Click += new System.EventHandler(this.exportClassStructuresMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutAssetStudioToolStripMenuItem,
+            this.donateAssetStudioToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // aboutAssetStudioToolStripMenuItem
+            // 
+            this.aboutAssetStudioToolStripMenuItem.Name = "aboutAssetStudioToolStripMenuItem";
+            this.aboutAssetStudioToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.aboutAssetStudioToolStripMenuItem.Text = "About AssetStudio";
+            this.aboutAssetStudioToolStripMenuItem.Click += new System.EventHandler(this.aboutAssetStudioToolStripMenuItem_Click);
+            // 
+            // donateAssetStudioToolStripMenuItem
+            // 
+            this.donateAssetStudioToolStripMenuItem.Name = "donateAssetStudioToolStripMenuItem";
+            this.donateAssetStudioToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.donateAssetStudioToolStripMenuItem.Text = "Donate to AssetStudio";
+            this.donateAssetStudioToolStripMenuItem.Click += new System.EventHandler(this.donateAssetStudioToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -1209,6 +1236,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
         private System.Windows.Forms.ToolStripTextBox specifyUnityVersion;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutAssetStudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem donateAssetStudioToolStripMenuItem;
     }
 }
 

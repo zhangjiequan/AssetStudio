@@ -2076,6 +2076,28 @@ namespace AssetStudioGUI
             logger.ShowErrorMessage = toolStripMenuItem15.Checked;
         }
 
+        private void aboutAssetStudioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AssetStudio is a tool for exploring, extracting and exporting assets and assetbundles.\n" +
+                "For more information, visit https://github.com/zhangjiequan/AssetStudio.",
+                "About AssetStudio",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void donateAssetStudioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DonateForm donateForm = new DonateForm();
+
+            donateForm.StartPosition = FormStartPosition.Manual;
+            Point center = this.Location;
+            center.X += (this.Width - donateForm.Width) / 2;
+            center.Y += (this.Height - donateForm.Height) / 2;
+            donateForm.Location = center;
+
+            donateForm.ShowDialog();
+        }
+
         private void glControl1_MouseWheel(object sender, MouseEventArgs e)
         {
             if (glControl1.Visible)
