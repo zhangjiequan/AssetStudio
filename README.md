@@ -125,7 +125,7 @@ Contact me at zhangjiequan@qq.com
 ## Donate
 AssetStudio is a free and open-source software. If you like it and find it helpful, you can buy me a coffee!
 
-![image.png](https://s2.loli.net/2023/11/21/p2wqxBgX349m8IG.png)
+![image.png](https://s2.loli.net/2023/11/22/ChyaeWrgXYS9NEJ.png)
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=zhangjiequan/AssetStudio&type=Date)](https://star-history.com/#zhangjiequan/AssetStudio&Date)
