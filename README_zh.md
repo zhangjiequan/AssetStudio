@@ -129,7 +129,7 @@ AssetStudio 根据 [MIT](./LICENSE) 许可证授权。
 
 AssetStudio是一款免费且开源的软件。如果你觉得它不错并且对你有帮助，可以请我喝一杯咖啡！
 
-![image.png](https://s2.loli.net/2023/11/21/QIatPDwMj2pV86J.png)
+![image.png](https://s2.loli.net/2023/11/22/1nURWl8m5Icx7HT.png)
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=zhangjiequan/AssetStudio&type=Date)](https://star-history.com/#zhangjiequan/AssetStudio&Date)
