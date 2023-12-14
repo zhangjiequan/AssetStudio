@@ -8,13 +8,16 @@
 ![Contributors](https://img.shields.io/github/contributors/zhangjiequan/AssetStudio?style=flat-square)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)
 
-![Platform](https://img.shields.io/badge/platform-windows-lightgrey?style=flat-square)
-![Downloads](https://img.shields.io/github/downloads/zhangjiequan/AssetStudio/total?style=flat-square)
-[![License](https://img.shields.io/github/license/zhangjiequan/AssetStudio?style=flat-square)](./LICENSE)
+[![](https://img.shields.io/github/downloads/zhangjiequan/AssetStudio/total?style=flat-square)](https://github.com/zhangjiequan/AssetStudio/releases)
+[![](https://img.shields.io/github/downloads/zhangjiequan/AssetStudio/latest/total?style=flat-square)](https://github.com/zhangjiequan/AssetStudio/releases/latest)
+[![](https://img.shields.io/github/v/release/zhangjiequan/AssetStudio?style=flat-square)](https://github.com/zhangjiequan/AssetStudio/releases/latest)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/zhangjiequan/AssetStudio?style=flat-square)](https://github.com/zhangjiequan/AssetStudio/watchers)
 [![GitHub forks](https://img.shields.io/github/forks/zhangjiequan/AssetStudio?style=flat-square)](https://gitpop2.vercel.app/zhangjiequan/AssetStudio)
 [![GitHub stars](https://img.shields.io/github/stars/zhangjiequan/AssetStudio?style=flat-square)](https://github.com/zhangjiequan/AssetStudio/stargazers)
+
+![Platform](https://img.shields.io/badge/platform-windows-lightgrey?style=flat-square)
+[![License](https://img.shields.io/github/license/zhangjiequan/AssetStudio?style=flat-square)](./LICENSE)
 
 [![Github CI Status](https://github.com/zhangjiequan/AssetStudio/actions/workflows/build.yml/badge.svg)](https://github.com/zhangjiequan/AssetStudio/actions)
 
