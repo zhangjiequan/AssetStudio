@@ -112,6 +112,11 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
+## Roadmap
+
+### Support for Lua bytecode assets
+Decomp, Preview and export LuaJIT, Lua 5.1, 5.2, and 5.3 bytecode assets.
+
 ## License
 
 AssetStudio is licensed under the [MIT](./LICENSE) license.

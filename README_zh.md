@@ -112,6 +112,11 @@ Use **File-Extract file** or **File-Extract folder**。
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
+## 线路图
+
+### 支持lua字节码资源
+反编译、预览和导出 LuaJIT、Lua 5.1、5.2 和 5.3 字节码资源。
+
 ## 许可
 
 AssetStudio 根据 [MIT](./LICENSE) 许可证授权。
