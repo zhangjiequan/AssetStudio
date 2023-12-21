@@ -115,7 +115,9 @@ Use **File-Extract file** or **File-Extract folder**。
 ## 线路图
 
 ### 支持lua字节码资源
-反编译、预览和导出 LuaJIT、Lua 5.1、5.2 和 5.3 字节码资源。
+反编译、预览和导出 LuaJIT、Lua 5.1、5.2 和 5.3 字节码资源。  
+LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)、[wenlong66/ljd: LuaJIT raw-bytecode decompiler](https://github.com/wenlong66/ljd)  
+Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)  
 
 ## 许可
 

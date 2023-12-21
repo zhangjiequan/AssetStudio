@@ -115,7 +115,9 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 ## Roadmap
 
 ### Support for Lua bytecode assets
-Decomp, Preview and export LuaJIT, Lua 5.1, 5.2, and 5.3 bytecode assets.
+Decomp, Preview and export LuaJIT, Lua 5.1, 5.2, and 5.3 bytecode assets.  
+LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)、[wenlong66/ljd: LuaJIT raw-bytecode decompiler](https://github.com/wenlong66/ljd)  
+Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)  
 
 ## License
 
