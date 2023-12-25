@@ -86,7 +86,7 @@ namespace AssetStudioGUI
             }
             if (!TryExportFile(exportPath, item, extension, out var exportFullPath))
                 return false;
-            File.WriteAllBytes(exportFullPath, m_TextAsset.m_Script);
+            File.WriteAllBytes(exportFullPath, m_TextAsset.GetProcessedScript());
             return true;
         }
 

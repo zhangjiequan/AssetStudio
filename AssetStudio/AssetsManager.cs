@@ -463,7 +463,7 @@ namespace AssetStudio
                                 obj = new SpriteAtlas(objectReader);
                                 break;
                             case ClassIDType.TextAsset:
-                                obj = new TextAsset(objectReader);
+                                obj = TextAssetFactory.Create(objectReader);
                                 break;
                             case ClassIDType.Texture2D:
                                 obj = new Texture2D(objectReader);
