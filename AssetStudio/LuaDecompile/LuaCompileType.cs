@@ -1,6 +1,9 @@
-public enum LuaCompileType
+namespace AssetStudio
 {
-    None,
-    Luac,
-    LuaJit
+    public enum LuaCompileType
+    {
+        None,
+        Luac,
+        LuaJit
+    }
 }

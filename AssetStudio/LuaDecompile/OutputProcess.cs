@@ -2,47 +2,50 @@ using System;
 using System.Diagnostics;
 using System.Text;
 
-public class OutputProcess : Process
+namespace AssetStudio
 {
-    private StringBuilder m_Output = new StringBuilder();
-    private StringBuilder m_Error = new StringBuilder();
-    
-    public string Output => m_Output.ToString();
-    public string Error => m_Error.ToString();
-
-    public OutputProcess()
+    public class OutputProcess : Process
     {
-        StartInfo.RedirectStandardOutput = true;
-        StartInfo.RedirectStandardError = true;
-        OutputDataReceived += OnProcessOutput;
-        ErrorDataReceived += OnProcessError;
-    }
+        private StringBuilder m_Output = new StringBuilder();
+        private StringBuilder m_Error = new StringBuilder();
 
-    private void OnProcessOutput(object sender,DataReceivedEventArgs events)
-    {
-        if (!String.IsNullOrEmpty(events.Data))
+        public string Output => m_Output.ToString();
+        public string Error => m_Error.ToString();
+
+        public OutputProcess()
         {
-            m_Output.AppendLine(events.Data);
+            StartInfo.RedirectStandardOutput = true;
+            StartInfo.RedirectStandardError = true;
+            OutputDataReceived += OnProcessOutput;
+            ErrorDataReceived += OnProcessError;
         }
-    }
 
-    private void OnProcessError(object sender, DataReceivedEventArgs events)
-    {
-        if (!String.IsNullOrEmpty(events.Data))
+        private void OnProcessOutput(object sender, DataReceivedEventArgs events)
         {
-            m_Error.AppendLine(events.Data);
+            if (!string.IsNullOrEmpty(events.Data))
+            {
+                m_Output.AppendLine(events.Data);
+            }
         }
-    }
 
-    public new bool Start()
-    {
-        m_Output.Clear();
-        bool success = base.Start();
-        if (success)
+        private void OnProcessError(object sender, DataReceivedEventArgs events)
         {
-            BeginOutputReadLine();
-            BeginErrorReadLine();
+            if (!string.IsNullOrEmpty(events.Data))
+            {
+                m_Error.AppendLine(events.Data);
+            }
         }
-        return success;
+
+        public new bool Start()
+        {
+            m_Output.Clear();
+            bool success = base.Start();
+            if (success)
+            {
+                BeginOutputReadLine();
+                BeginErrorReadLine();
+            }
+            return success;
+        }
     }
 }
