@@ -32,6 +32,8 @@ AssetStudio - Based on the archived Perfare's AssetStudio, I continue Perfare's 
 * Enhanced Shader Preview and Export
   * Add pretty printing functionality to enhance shader information readability.
   * Fix errors by implementing lazy generation for ShaderSubProgram as needed.
+* Support for Lua bytecode assets
+  * Decompile, preview and export LuaJIT, Lua 5.1, 5.2, and 5.3 bytecode assets.
 ---
 
 **None of the repo, the tool, nor the repo owner is affiliated with, or sponsored or authorized by, Unity Technologies or its affiliates.**
@@ -53,6 +55,7 @@ AssetStudio is a tool for exploring, extracting and exporting assets and assetbu
   * **VideoClip**
   * **MonoBehaviour** : json
   * **Animator** : export to FBX file with bound AnimationClip
+  * **Lua bytecode** : decompile Lua bytecode back to Lua source code
 
 ## Requirements
 
@@ -112,12 +115,13 @@ First, use my another program [Il2CppDumper](https://github.com/Perfare/Il2CppDu
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
+### Lua Bytecode Decompiler
+* LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)
+* Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)
+
 ## Roadmap
 
-### Support for Lua bytecode assets
-Decomp, Preview and export LuaJIT, Lua 5.1, 5.2, and 5.3 bytecode assets.  
-LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)、[wenlong66/ljd: LuaJIT raw-bytecode decompiler](https://github.com/wenlong66/ljd)  
-Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)  
+No changes are currently planned.
 
 ## License
 

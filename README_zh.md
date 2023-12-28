@@ -32,6 +32,8 @@ AssetStudio - 基于已归档的 Perfare 的 AssetStudio，我继续 Perfare 的
 * 增强的着色器预览和导出
   * 添加美观打印功能以增强着色器信息的可读性。
   * 通过实现 ShaderSubProgram 的延迟生成来修复错误。
+* 支持Lua字节码资源
+  * 反编译、预览和导出 LuaJIT、Lua 5.1、5.2 和 5.3 字节码资源。
 ---
 
 **该仓库、工具和仓库所有者均与 Unity Technologies 或其关联公司无关，也未获其赞助或授权。**
@@ -53,6 +55,7 @@ AssetStudio 是一个用于探索、提取和导出资产和资产包的工具�
   * **VideoClip**
   * **MonoBehaviour** : json
   * **Animator** : 导出为带有绑定 AnimationClip 的 FBX 文件
+  * **Lua bytecode** : 反编译Lua字节码为Lua源代码
 
 ## 系统要求
 
@@ -112,12 +115,13 @@ Use **File-Extract file** or **File-Extract folder**。
 * [BinomialLLC/crunch](https://github.com/BinomialLLC/crunch)
 * [Unity-Technologies/crunch](https://github.com/Unity-Technologies/crunch/tree/unity)
 
+### Lua字节码反编译器
+* LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)
+* Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)
+
 ## 线路图
 
-### 支持lua字节码资源
-反编译、预览和导出 LuaJIT、Lua 5.1、5.2 和 5.3 字节码资源。  
-LuaJIT: [zhangjiequan/ljd: LuaJIT raw-bytecode decompiler](https://github.com/zhangjiequan/ljd)、[wenlong66/ljd: LuaJIT raw-bytecode decompiler](https://github.com/wenlong66/ljd)  
-Lua 5.1, 5.2, and 5.3: [zhangjiequan/luadec: Lua Decompiler for lua 5.1 , 5.2 and 5.3](https://github.com/zhangjiequan/luadec)  
+当前没有计划的变更。
 
 ## 许可
 
