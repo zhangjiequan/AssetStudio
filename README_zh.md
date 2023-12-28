@@ -103,6 +103,10 @@ Use **File-Extract file** or **File-Extract folder**。
 
 首先，使用我的另一个程序 [Il2CppDumper](https://github.com/Perfare/Il2CppDumper) 生成虚拟 dll，然后在使用 AssetStudio 选择程序集目录时，选择虚拟 dll 文件夹。
 
+### 反编译Lua字节码
+
+默认状态下，反编译Lua字节码功能不会开启。可以通过 **Options-Decompile Lua** 来启用此功能。
+
 ## 构建
 
 * Visual Studio 2022 或更新版本
