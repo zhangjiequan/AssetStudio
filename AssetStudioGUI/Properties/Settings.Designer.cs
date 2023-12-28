@@ -274,5 +274,20 @@ namespace AssetStudioGUI.Properties {
                 this["exportAllUvsAsDiffuseMaps"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool decompileLua
+        {
+            get
+            {
+                return ((bool)(this["decompileLua"]));
+            }
+            set
+            {
+                this["decompileLua"] = value;
+            }
+        }
     }
 }

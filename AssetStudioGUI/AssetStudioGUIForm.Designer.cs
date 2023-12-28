@@ -44,6 +44,7 @@
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.specifyUnityVersion = new System.Windows.Forms.ToolStripTextBox();
             this.showExpOpt = new System.Windows.Forms.ToolStripMenuItem();
+            this.decompileLua = new System.Windows.Forms.ToolStripMenuItem();
             this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportAllObjectssplitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSelectedObjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,7 +219,8 @@
             this.enablePreview,
             this.displayInfo,
             this.toolStripMenuItem14,
-            this.showExpOpt});
+            this.showExpOpt,
+            this.decompileLua});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(66, 21);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -277,6 +279,15 @@
             this.showExpOpt.Size = new System.Drawing.Size(223, 22);
             this.showExpOpt.Text = "Export options";
             this.showExpOpt.Click += new System.EventHandler(this.showExpOpt_Click);
+            // 
+            // decompileLua
+            // 
+            this.decompileLua.CheckOnClick = true;
+            this.decompileLua.Name = "decompileLua";
+            this.decompileLua.Size = new System.Drawing.Size(223, 22);
+            this.decompileLua.Text = "Decompile Lua";
+            this.decompileLua.ToolTipText = "Toggle decompilation of Lua while preview and export";
+            this.decompileLua.CheckedChanged += new System.EventHandler(this.decompileLua_CheckedChanged);
             // 
             // modelToolStripMenuItem
             // 
@@ -1239,6 +1250,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutAssetStudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem donateAssetStudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decompileLua;
     }
 }
 
