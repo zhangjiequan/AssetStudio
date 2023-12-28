@@ -41,6 +41,7 @@ namespace AssetStudio
                 if (decompileProcess.ExitCode == 0)
                 {
                     luaCode = Encoding.UTF8.GetBytes(decompileProcess.Output);
+                    luaCode = Encoding.Convert(Encoding.UTF8, Encoding.Default, luaCode);
                 }
                 else
                 {
