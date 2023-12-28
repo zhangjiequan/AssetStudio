@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace AssetStudio
 {
@@ -18,13 +19,13 @@ namespace AssetStudio
         private const string TEMP_FILE = "tempCompiledLua.lua";
         private static readonly string DecompileArg = "-se UTF8 " + TEMP_FILE;
 
-        public string Decompile(LuaByteInfo luaByteInfo)
+        public byte[] Decompile(LuaByteInfo luaByteInfo)
         {
             var isSupport = versionHandlerMap.TryGetValue(luaByteInfo.VersionCode, out string subPath);
             if (!isSupport)
             {
                 // 不支持的版本，原样输出
-                return luaByteInfo.StrContent;
+                return luaByteInfo.ProcessedByte;
             }
             else
             {
@@ -33,7 +34,7 @@ namespace AssetStudio
             }
         }
 
-        private string TryDecompile(LuaByteInfo luaByteInfo, string exePath)
+        private byte[] TryDecompile(LuaByteInfo luaByteInfo, string exePath)
         {
             File.WriteAllBytes(TEMP_FILE, luaByteInfo.RawByte);
             var decompileProcess = new OutputProcess();
@@ -47,7 +48,8 @@ namespace AssetStudio
                 if (decompileProcess.ExitCode == 0)
                 {
                     // 编译完成结果缓存起来
-                    luaByteInfo.SetDecompiledContent(decompileProcess.Output);
+                    var gbkEncode = Encoding.GetEncoding("gbk");
+                    luaByteInfo.SetDecompiledContent(gbkEncode.GetBytes(decompileProcess.Output));
                 }
             }
             catch (Exception e)
@@ -58,7 +60,7 @@ namespace AssetStudio
             {
                 decompileProcess.Close();
             }
-            return luaByteInfo.StrContent;
+            return luaByteInfo.ProcessedByte;
         }
 
     }

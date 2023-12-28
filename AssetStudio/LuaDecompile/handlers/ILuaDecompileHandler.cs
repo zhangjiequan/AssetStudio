@@ -2,6 +2,6 @@ namespace AssetStudio
 {
     public interface ILuaDecompileHandler
     {
-        string Decompile(LuaByteInfo luaByteInfo);
+        byte[] Decompile(LuaByteInfo luaByteInfo);
     }
 }

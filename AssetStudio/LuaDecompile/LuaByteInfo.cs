@@ -7,7 +7,7 @@ namespace AssetStudio
         private byte[] m_Bytes;
         private LuaCompileType m_CompileType;
         private byte m_Version;
-        private string m_DecompileContent;
+        private byte[] m_DecompileContent;
 
         public byte[] RawByte => m_Bytes;
         public LuaCompileType CompileType => m_CompileType;
@@ -15,13 +15,13 @@ namespace AssetStudio
         public bool HasDecompiled;
 
 
-        public string StrContent
+        public byte[] ProcessedByte
         {
             get
             {
-                if (string.IsNullOrEmpty(m_DecompileContent))
+                if (m_DecompileContent == null || m_DecompileContent.Length == 0)
                 {
-                    return Encoding.UTF8.GetString(m_Bytes);
+                    return m_Bytes;
                 }
                 else
                 {
@@ -37,9 +37,9 @@ namespace AssetStudio
             m_Version = version;
         }
 
-        public void SetDecompiledContent(string decompiledStr)
+        public void SetDecompiledContent(byte[] decompiledBytes)
         {
-            m_DecompileContent = decompiledStr;
+            m_DecompileContent = decompiledBytes;
         }
     }
 }

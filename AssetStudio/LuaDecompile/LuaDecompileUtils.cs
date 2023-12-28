@@ -12,14 +12,14 @@ namespace AssetStudio
         { LuaCompileType.LuaJit, new LuaJitDecompileHandler()},
     };
 
-        public static string DecompileLua(LuaByteInfo luaByteInfo)
+        public static byte[] DecompileLua(LuaByteInfo luaByteInfo)
         {
             luaByteInfo.HasDecompiled = true;
             bool isSupport = handlerMap.TryGetValue(luaByteInfo.CompileType, out ILuaDecompileHandler handler);
             if (!isSupport)
             {
                 // 不支持的编译方式，原文返回
-                return luaByteInfo.StrContent;
+                return luaByteInfo.ProcessedByte;
             }
             else
             {

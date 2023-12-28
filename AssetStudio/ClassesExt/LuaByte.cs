@@ -20,8 +20,7 @@ namespace AssetStudio
             {
                 LuaDecompileUtils.DecompileLua(m_LuaByteInfo);
             }
-            // 不能用 UTF8 好像显示时候默认 GBK 解码
-            return Encoding.Default.GetBytes(m_LuaByteInfo.StrContent);
+            return m_LuaByteInfo.ProcessedByte;
         }
 
         public override byte[] GetRawScript()

@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 
 namespace AssetStudio
 {
@@ -10,18 +11,18 @@ namespace AssetStudio
         private const string DEPENDENCY_PATH = "Dependencies";
         private const string TEMP_FILE = "tempCompiledLua.lua";
 
-        public string Decompile(LuaByteInfo luaByteInfo)
+        public byte[] Decompile(LuaByteInfo luaByteInfo)
         {
-            if (TryDecompile(luaByteInfo.RawByte, out string luaCode))
+            if (TryDecompile(luaByteInfo.RawByte, out byte[] luaCode))
             {
                 // 缓存反编译结果
                 luaByteInfo.SetDecompiledContent(luaCode);
             }
 
-            return luaByteInfo.StrContent;
+            return luaByteInfo.ProcessedByte;
         }
 
-        private bool TryDecompile(byte[] luaBytes, out string luaCode)
+        private bool TryDecompile(byte[] luaBytes, out byte[] luaCode)
         {
             var dependencyPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DEPENDENCY_PATH));
             var decompilerPath = Path.GetFullPath(Path.Combine(dependencyPath, LJD_PATH));
@@ -39,7 +40,7 @@ namespace AssetStudio
                 decompileProcess.WaitForExit();
                 if (decompileProcess.ExitCode == 0)
                 {
-                    luaCode = decompileProcess.Output;
+                    luaCode = Encoding.UTF8.GetBytes(decompileProcess.Output);
                 }
                 else
                 {

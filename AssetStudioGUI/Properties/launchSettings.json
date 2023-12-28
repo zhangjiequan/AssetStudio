@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AssetStudioGUI": {
-      "commandName": "Project",
-      "commandLineArgs": "C:/family/pjfamily-client/UnityProj/AssetBundles/Android/luascripts/logic.data"
-    }
-  }
-}
