@@ -24,6 +24,7 @@
 #
 
 import sys
+import io
 
 import ljd.rawdump.parser
 import ljd.pseudoasm.writer
@@ -114,7 +115,7 @@ def main():
             ljd.ast.mutator.primary_pass(ast)
 
             ljd.ast.validator.validate(ast, warped=False)
-
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
     ljd.lua.writer.write(sys.stdout, ast)
 
     return 0
