@@ -86,7 +86,8 @@ namespace AssetStudioGUI
             }
             if (!TryExportFile(exportPath, item, extension, out var exportFullPath))
                 return false;
-            File.WriteAllBytes(exportFullPath, m_TextAsset.GetProcessedScript());
+            byte[] textBytes = Properties.Settings.Default.decompileLua ? m_TextAsset.GetProcessedScript() : m_TextAsset.GetRawScript();
+            File.WriteAllBytes(exportFullPath, textBytes);
             return true;
         }
 
