@@ -109,6 +109,7 @@ namespace AssetStudioGUI
             displayAll.Checked = Properties.Settings.Default.displayAll;
             displayInfo.Checked = Properties.Settings.Default.displayInfo;
             enablePreview.Checked = Properties.Settings.Default.enablePreview;
+            decompileLua.Checked = Properties.Settings.Default.decompileLua;
             FMODinit();
 
             logger = new GUILogger(StatusStripUpdate);
@@ -402,6 +403,12 @@ namespace AssetStudioGUI
         private void displayAll_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.displayAll = displayAll.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void decompileLua_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.decompileLua = decompileLua.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -969,7 +976,8 @@ namespace AssetStudioGUI
 
         private void PreviewTextAsset(TextAsset m_TextAsset)
         {
-            var text = Encoding.UTF8.GetString(m_TextAsset.GetProcessedScript());
+            byte[] textBytes = Properties.Settings.Default.decompileLua ? m_TextAsset.GetProcessedScript() : m_TextAsset.GetRawScript();
+            var text = Encoding.UTF8.GetString(textBytes);
             text = text.Replace("\n", "\r\n").Replace("\0", "");
             PreviewText(text);
         }
