@@ -41,7 +41,6 @@ namespace AssetStudio
                 if (decompileProcess.ExitCode == 0)
                 {
                     luaCode = Encoding.UTF8.GetBytes(decompileProcess.Output);
-                    luaCode = Encoding.Convert(Encoding.UTF8, Encoding.Default, luaCode);
                 }
                 else
                 {
@@ -67,6 +66,7 @@ namespace AssetStudio
             decompileProcess.StartInfo.FileName = pythonExePath;
             decompileProcess.StartInfo.Arguments = args;
             decompileProcess.StartInfo.UseShellExecute = false;
+            decompileProcess.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             return decompileProcess;
         }
     }

@@ -16,6 +16,7 @@ namespace AssetStudio
         {
             StartInfo.RedirectStandardOutput = true;
             StartInfo.RedirectStandardError = true;
+            
             OutputDataReceived += OnProcessOutput;
             ErrorDataReceived += OnProcessError;
         }
