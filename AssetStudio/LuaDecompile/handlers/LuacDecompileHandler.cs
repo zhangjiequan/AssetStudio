@@ -40,7 +40,7 @@ namespace AssetStudio
             var decompileProcess = new OutputProcess();
             decompileProcess.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, EXE_DIR, exePath);
             decompileProcess.StartInfo.Arguments = DecompileArg;
-            decompileProcess.StartInfo.StandardOutputEncoding = Encoding.Default;
+            decompileProcess.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             decompileProcess.StartInfo.UseShellExecute = false;
             try
             {
@@ -49,7 +49,7 @@ namespace AssetStudio
                 if (decompileProcess.ExitCode == 0)
                 {
                     // 编译完成结果缓存起来;
-                    luaByteInfo.SetDecompiledContent(Encoding.Default.GetBytes(decompileProcess.Output));
+                    luaByteInfo.SetDecompiledContent(Encoding.UTF8.GetBytes(decompileProcess.Output));
                 }
                 else
                 {
