@@ -67,6 +67,7 @@ namespace AssetStudio
             decompileProcess.StartInfo.FileName = pythonExePath;
             decompileProcess.StartInfo.Arguments = args;
             decompileProcess.StartInfo.UseShellExecute = false;
+            decompileProcess.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             return decompileProcess;
         }
     }

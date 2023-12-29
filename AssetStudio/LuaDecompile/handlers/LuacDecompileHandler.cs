@@ -17,7 +17,7 @@ namespace AssetStudio
 
         private const string EXE_DIR = "Dependencies/luadec";
         private const string TEMP_FILE = "tempCompiledLua.lua";
-        private static readonly string DecompileArg = "-se UTF8 " + TEMP_FILE;
+        private static readonly string DecompileArg = $"-se UTF8 {TEMP_FILE}";
 
         public byte[] Decompile(LuaByteInfo luaByteInfo)
         {
@@ -36,10 +36,11 @@ namespace AssetStudio
 
         private byte[] TryDecompile(LuaByteInfo luaByteInfo, string exePath)
         {
-            File.WriteAllBytes(TEMP_FILE, luaByteInfo.RawByte);
+            File.WriteAllBytes(TEMP_FILE, luaByteInfo.RawByte);     
             var decompileProcess = new OutputProcess();
             decompileProcess.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, EXE_DIR, exePath);
             decompileProcess.StartInfo.Arguments = DecompileArg;
+            decompileProcess.StartInfo.StandardOutputEncoding = Encoding.Default;
             decompileProcess.StartInfo.UseShellExecute = false;
             try
             {
@@ -47,9 +48,12 @@ namespace AssetStudio
                 decompileProcess.WaitForExit();
                 if (decompileProcess.ExitCode == 0)
                 {
-                    // 编译完成结果缓存起来
-                    var gbkEncode = Encoding.GetEncoding("gbk");
-                    luaByteInfo.SetDecompiledContent(gbkEncode.GetBytes(decompileProcess.Output));
+                    // 编译完成结果缓存起来;
+                    luaByteInfo.SetDecompiledContent(Encoding.Default.GetBytes(decompileProcess.Output));
+                }
+                else
+                {
+                    Console.WriteLine(decompileProcess.Error);
                 }
             }
             catch (Exception e)
