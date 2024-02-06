@@ -125,7 +125,8 @@ Use **File-Extract file** or **File-Extract folder**。
 
 ## 线路图
 
-当前没有计划的变更。
+### 支持新版本的Unity
+Unity 2023.1、Unity 2023.2、Unity 6 (Unity 2023 LTS, Unity 2023.3)等。
 
 ## 许可
 

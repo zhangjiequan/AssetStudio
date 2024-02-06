@@ -125,7 +125,8 @@ By default, the feature to decompile Lua bytecode is not enabled. It can be acti
 
 ## Roadmap
 
-No changes are currently planned.
+### Support for new Unity versions
+Unity 2023.1, Unity 2023.2, Unity 6 (Unity 2023 LTS, Unity 2023.3), etc.
 
 ## License
 
