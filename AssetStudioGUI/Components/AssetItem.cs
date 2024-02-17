@@ -13,7 +13,7 @@ namespace AssetStudioGUI
         public long FullSize;
         public ClassIDType Type;
         public string InfoText;
-        public string UniqueID;
+        public string UniqueID => $"@{SourceFile.fileName}.{m_PathID}";
         public GameObjectTreeNode TreeNode;
 
         public AssetItem(Object asset)
