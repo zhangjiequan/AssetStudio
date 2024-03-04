@@ -21,8 +21,6 @@
 
 [![Github CI Status](https://github.com/zhangjiequan/AssetStudio/actions/workflows/build.yml/badge.svg)](https://github.com/zhangjiequan/AssetStudio/actions)
 
-![Custom](https://img.shields.io/badge/zhangjiequan-Jackie@Baioo-green)
-
 
 AssetStudio - 基于已归档的 Perfare 的 AssetStudio，我继续 Perfare 的工作，保持 AssetStudio 的更新，支持新版本的 Unity 和额外的改进。
 

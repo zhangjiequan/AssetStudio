@@ -21,8 +21,6 @@
 
 [![Github CI Status](https://github.com/zhangjiequan/AssetStudio/actions/workflows/build.yml/badge.svg)](https://github.com/zhangjiequan/AssetStudio/actions)
 
-![Custom](https://img.shields.io/badge/zhangjiequan-Jackie@Baioo-green)
-
 
 AssetStudio - Based on the archived Perfare's AssetStudio, I continue Perfare's work to keep AssetStudio up-to-date, with support for new Unity versions and additional improvements.
 
