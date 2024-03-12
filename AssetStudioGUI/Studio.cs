@@ -250,6 +250,11 @@ namespace AssetStudioGUI
             }
             foreach (var tmp in exportableAssets)
             {
+                if (tmp.Container == "" && tmp.Asset is Component m_Component)
+                {
+                    if (m_Component.m_GameObject.TryGet(out var obj))
+                        tmp.Container = objectAssetItemDic[obj].Container;
+                }
                 tmp.SetSubItems();
             }
             containers.Clear();
@@ -392,7 +397,7 @@ namespace AssetStudioGUI
                         case 1: //container path
                             if (!string.IsNullOrEmpty(asset.Container))
                             {
-                                exportPath = Path.Combine(savePath, Path.GetDirectoryName(asset.Container));
+                                exportPath = Path.Combine(savePath, asset.Container);
                             }
                             else
                             {
