@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -1550,6 +1551,8 @@ namespace AssetStudioGUI
             assetListView.BeginUpdate();
             assetListView.SelectedIndices.Clear();
             var show = new List<ClassIDType>();
+
+            // 根据菜单选项筛选类型
             if (!allToolStripMenuItem.Checked)
             {
                 for (var i = 1; i < filterTypeToolStripMenuItem.DropDownItems.Count; i++)
@@ -1566,13 +1569,61 @@ namespace AssetStudioGUI
             {
                 visibleAssets = exportableAssets;
             }
+
+            // 如果搜索框的文本不为 " Filter "，则进行搜索过滤
             if (listSearch.Text != " Filter ")
             {
-                visibleAssets = visibleAssets.FindAll(
-                    x => x.Text.IndexOf(listSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    x.SubItems[1].Text.IndexOf(listSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    x.SubItems[3].Text.IndexOf(listSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                var searchPattern = listSearch.Text;
+
+                try
+                {
+                    if (searchPattern.StartsWith("@!"))
+                    {
+                        // 排除正则表达式模式
+                        searchPattern = searchPattern.Substring(2); // 去掉 @! 前缀
+
+                        var searchRegex = new Regex(searchPattern, RegexOptions.IgnoreCase);
+
+                        visibleAssets = visibleAssets.FindAll(
+                            x => !searchRegex.IsMatch(x.Text) && 
+                                !searchRegex.IsMatch(x.SubItems[1].Text) && 
+                                !searchRegex.IsMatch(x.SubItems[3].Text)
+                        );
+                    }
+                    else if (searchPattern.StartsWith("@"))
+                    {
+                        // 使用正则表达式进行匹配
+                        searchPattern = searchPattern.Substring(1); // 去掉 @ 前缀
+
+                        var searchRegex = new Regex(searchPattern, RegexOptions.IgnoreCase);
+
+                        visibleAssets = visibleAssets.FindAll(
+                            x => searchRegex.IsMatch(x.Text) || 
+                                searchRegex.IsMatch(x.SubItems[1].Text) || 
+                                searchRegex.IsMatch(x.SubItems[3].Text)
+                        );
+                    }
+                    else
+                    {
+                        // 进行普通字符串匹配（忽略大小写）
+                        visibleAssets = visibleAssets.FindAll(
+                            x => x.Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                                x.SubItems[1].Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                                x.SubItems[3].Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0
+                        );
+                    }
+                }
+                catch (ArgumentException)
+                {
+                    visibleAssets = visibleAssets.FindAll(
+                        x => x.Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                            x.SubItems[1].Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0 || 
+                            x.SubItems[3].Text.IndexOf(searchPattern, StringComparison.OrdinalIgnoreCase) >= 0
+                    );
+                }
             }
+
+            // 更新显示列表的大小
             assetListView.VirtualListSize = visibleAssets.Count;
             assetListView.EndUpdate();
         }
